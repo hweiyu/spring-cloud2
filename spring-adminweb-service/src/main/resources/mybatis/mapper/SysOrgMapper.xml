@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.imin.adminweb.mapper.user.SysOrgMapper">
+
+    <select id="getMaxQueue" resultType="String">
+        select org_queue from t_sys_org
+        where parent_id = #{parentId}
+        order by id desc
+        limit 1
+    </select>
+</mapper>

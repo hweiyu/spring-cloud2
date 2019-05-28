@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.imin.adminweb.mapper.agent.AppBookingNodeMapper">
+
+    <insert id="batchInsert" parameterType="com.imin.adminweb.model.agent.AppBookingNodeModel">
+        insert into t_app_booking_node(
+        `seq`,
+        `auditor_id`,
+        `auditor_name`,
+        `role_id`,
+        `audit_flag`,
+        `node`,
+        `remark`,
+        `audit_time`
+        ) values
+        <foreach collection="list" item="bean" separator=",">
+            (
+            #{bean.seq,jdbcType=VARCHAR},
+            #{bean.auditorId,jdbcType=BIGINT},
+            #{bean.auditorName,jdbcType=VARCHAR},
+            #{bean.roleId,jdbcType=BIGINT},
+            #{bean.auditFlag,jdbcType=INTEGER},
+            #{bean.node,jdbcType=VARCHAR},
+            #{bean.remark,jdbcType=VARCHAR},
+            #{bean.auditTime,jdbcType=TIMESTAMP}
+            )
+        </foreach>
+    </insert>
+
+</mapper>

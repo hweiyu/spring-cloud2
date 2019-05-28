@@ -1,0 +1,25 @@
+
+.__        .__                                              .__
+|__| _____ |__| ____     ____ ___  ________    _____ ______ |  |   ____
+|  |/     \|  |/    \  _/ __ \\  \/  /\__  \  /     \\____ \|  | _/ __ \
+|  |  Y Y  \  |   |  \ \  ___/ >    <  / __ \|  Y Y  \  |_> >  |_\  ___/
+|__|__|_|  /__|___|  /  \___  >__/\_ \(____  /__|_|  /   __/|____/\___  >
+         \/        \/       \/      \/     \/      \/|__|             \/
+ :: imin-cloud example ::
+ 
+ Build Version: ${info.app.build.ver}
+ Application Version: ${application.version}${application.formatted-version}
+ Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}
+ Spring Profiles Active: ${spring.profiles.active}
+ Spring Cloud Config Profile: ${spring.cloud.config.profile}
+
+ :: Start
+ Api Url prefix: ${api.url.prefix}
+ Server Port: ${server.port}
+ Server Path: ${server.context-path}
+ Database Url: ${spring.datasource.url} 
+ Redis Host: ${spring.redis.host}
+ Skip Token: ${defconf.nottoken}          
+ Eureka Url: ${eureka.client.serviceUrl.defaultZone}
+ Config Uri: ${spring.cloud.config.uri}
+ :: End

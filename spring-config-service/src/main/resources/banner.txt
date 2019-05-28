@@ -1,0 +1,20 @@
+
+.__        .__                              _____.__
+|__| _____ |__| ____     ____  ____   _____/ ____\__| ____
+|  |/     \|  |/    \  _/ ___\/  _ \ /    \   __\|  |/ ___\
+|  |  Y Y  \  |   |  \ \  \__(  <_> )   |  \  |  |  / /_/  >
+|__|__|_|  /__|___|  /  \___  >____/|___|  /__|  |__\___  /
+         \/        \/       \/           \/        /_____/
+ :: imin-cloud config ::
+ :: Start
+ Application Version: ${application.version}${application.formatted-version}
+ Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}
+ Spring Profiles Active: ${spring.profiles.active}
+ Spring Cloud Config Server Native.search-locations: ${spring.cloud.config.server.native.search-locations}
+ 
+ Security User Name: ${security.user.name}
+ Security User Password: ${security.user.password}
+ Encrypt Key: ${encrypt.key}
+ 
+ 
+ :: End

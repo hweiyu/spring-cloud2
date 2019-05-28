@@ -1,0 +1,16 @@
+
+.__        .__         ________  .__
+|__| _____ |__| ____   \______ \ |__| ______ ____  _______  __ ___________ ___.__.
+|  |/     \|  |/    \   |    |  \|  |/  ___// ___\/  _ \  \/ // __ \_  __ <   |  |
+|  |  Y Y  \  |   |  \  |    `   \  |\___ \\  \__(  <_> )   /\  ___/|  | \/\___  |
+|__|__|_|  /__|___|  / /_______  /__/____  >\___  >____/ \_/  \___  >__|   / ____|
+         \/        \/          \/        \/     \/                \/       \/
+ :: imin-cloud discovery ::
+ :: Start
+ Application Version: ${application.version}${application.formatted-version}
+ Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}
+ Spring Profiles Active: ${spring.profiles.active}
+
+ Security User Name: ${security.user.name}
+ Security User Password: ${security.user.password}
+ :: End

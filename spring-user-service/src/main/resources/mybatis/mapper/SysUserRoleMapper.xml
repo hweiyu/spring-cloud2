@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.imin.user.mapper.SysUserRoleMapper">
+
+    <insert id="batchInsert" parameterType="com.imin.user.model.SysUserRoleModel">
+        insert into t_sys_user_role(
+        `user_id`,
+        `role_id`
+        ) values
+        <foreach collection="list" item="bean" separator=",">
+            (
+            #{bean.userId,jdbcType=BIGINT},
+            #{bean.roleId,jdbcType=BIGINT}
+            )
+        </foreach>
+    </insert>
+
+</mapper>

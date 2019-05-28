@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.imin.adminweb.mapper.retailers.RetailersDeviceInfoMapper">
+
+
+    <!-- 批量修改终端设备信息-->
+
+    <update id="BatchUpdate" parameterType="java.util.List">
+        update t_retailers_device_info
+        set agent_id =
+        <foreach collection="retailersList" item="bean" separator=" " open="case sn" close="end">
+            when #{bean.sn} then #{bean.agentId}
+        </foreach>
+        , user_id =
+        <foreach collection="retailersList" item="bean" separator=" " open="case sn" close="end">
+            when #{bean.sn} then #{bean.userId}
+        </foreach>
+        , agent_account =
+        <foreach collection="retailersList" item="bean" separator=" " open="case sn" close="end">
+            when #{bean.sn} then #{bean.agentAccount}
+        </foreach>
+        where sn in
+        <foreach collection="retailersList" item="bean" separator="," open="(" close=")">
+            #{bean.sn}
+        </foreach>
+
+    </update>
+
+    <!-- 批量删除终端设备信息 -->
+    <delete id="batchDelete" parameterType="String">
+        delete from t_retailers_device_info where sn in
+        <foreach item="item" collection="list" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <!-- 批量增加终端设备信息-->
+    <insert id="batchInsert" parameterType="com.imin.adminweb.dto.request.retailers.RetailersDeviceInfobatchInsertReqDto">
+        insert into t_retailers_device_info(
+        `user_id`,
+        `agent_id`,
+        `agent_account`,
+        `sn`
+        ) values
+        <foreach collection="retailersList" item="bean" separator=",">
+            (
+            #{bean.userId,jdbcType=INTEGER},
+            #{bean.agentId,jdbcType=VARCHAR},
+            #{bean.agentAccount,jdbcType=VARCHAR},
+            #{bean.sn,jdbcType=VARCHAR}
+            )
+        </foreach>
+    </insert>
+
+
+</mapper>
